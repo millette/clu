@@ -51,7 +51,6 @@
   },
   "homepage": "https://github.com/millette/clu#readme",
   "dependencies": {
-    "@emotion/core": "^10.0.21",
     "@mdx-js/loader": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "@mdx-js/runtime": "^1.5.1",
