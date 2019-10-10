@@ -1,0 +1,71 @@
+{
+  "name": "clu",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "clean": "rm -fr out .next",
+    "healthier": "healthier",
+    "start": "next start"
+  },
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/millette/clu.git"
+  },
+  "author": {
+    "name": "Robin Millette",
+    "email": "robin@millette.info",
+    "url": "http://robin.millette.info"
+  },
+  "engines": {
+    "node": ">= 10.16.3"
+  },
+  "healthier": {
+    "parser": "babel-eslint",
+    "globals": [
+      "fetch"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5",
+    "arrowParens": "always"
+  },
+  "eslintConfig": {
+    "rules": {
+      "react/react-in-jsx-scope": "off"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/millette/clu/issues"
+  },
+  "homepage": "https://github.com/millette/clu#readme",
+  "dependencies": {
+    "@emotion/core": "^10.0.21",
+    "@mdx-js/loader": "^1.5.1",
+    "@mdx-js/react": "^1.5.1",
+    "@mdx-js/runtime": "^1.5.1",
+    "@next/mdx": "^9.1.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.1.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "healthier": "^3.2.0",
+    "husky": "^2.7.0",
+    "lint-staged": "9.3.0",
+    "prettier": "^1.18.2"
+  }
+}
