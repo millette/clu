@@ -1,5 +1,5 @@
 // core
-import { open, writeFile, createReadStream } from "fs"
+import { open, createReadStream } from "fs"
 import { pipeline } from "stream"
 
 const ApiCustomPage = (req, res) => {
