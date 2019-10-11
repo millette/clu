@@ -5,20 +5,21 @@ import MDXRuntime from "@mdx-js/runtime"
 import { MDXProvider } from "@mdx-js/react"
 import "isomorphic-unfetch"
 
-import Boo from "../docs/comp-1.mdx"
+// import Boo from "../docs/comp-1.mdx"
 
-console.log("MDXRuntime:", MDXRuntime)
-console.log("MDXRuntime:", MDXRuntime.toString())
-console.log("MDXRuntime:", Object.keys(MDXRuntime))
+// console.log("MDXRuntime:", MDXRuntime)
+// console.log("MDXRuntime:", MDXRuntime.toString())
+// console.log("MDXRuntime:", Object.keys(MDXRuntime))
 
-const CustomPage = ({ MDXContent, Comp }) => {
-  console.log("Boo", typeof Boo)
-  console.log(Boo)
-  console.log(Boo.toString())
+const CustomPage = ({ MDXContent, xx }) => {
+  // console.log("Boo", typeof Boo)
+  // console.log(Boo)
+  // console.log(Boo.toString())
 
-  console.log("COMP", typeof Comp)
-  console.log(Comp)
-  const components = { Comp }
+  // console.log("COMP", typeof Comp)
+  // console.log(Comp)
+  // const components = { Comp: () => <MDXRuntime>{xx}</MXDRuntime> }
+  const components = { Comp: () => <MDXRuntime>{xx}</MDXRuntime> }
 
   return (
     <MDXProvider components={components}>
@@ -44,10 +45,10 @@ CustomPage.getInitialProps = async (o) => {
     if (res3.ok) {
       const comp2 = await res3.text()
       // const Comp = createElement(MDXProvider, {}, createElement(MDXRuntime, { children: createElement((Comp2, {})) }))
-      const x = <MDXRuntime>{comp2}</MDXRuntime>
+      // const x = () => <MDXRuntime>{comp2}</MDXRuntime>
 
-      console.log("X", typeof x, typeof x.type)
-      console.log("X", x.type)
+      // console.log("X", typeof x, typeof x.type)
+      // console.log("X", x.type)
 
       // const y = x.type({scope: {}})
       // console.log('Y', typeof y, typeof y.type)
@@ -55,7 +56,7 @@ CustomPage.getInitialProps = async (o) => {
       // const z = y.type({scope: {}})
       // console.log('Z', typeof z, z)
 
-      return { MDXContent, Comp: undefined }
+      return { MDXContent, xx: comp2 }
     }
   }
 
