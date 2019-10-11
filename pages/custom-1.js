@@ -19,7 +19,9 @@ const CustomPage = ({ MDXContent, xx }) => {
   // console.log("COMP", typeof Comp)
   // console.log(Comp)
   // const components = { Comp: () => <MDXRuntime>{xx}</MXDRuntime> }
-  const components = { Comp: () => <MDXRuntime>{xx}</MDXRuntime> }
+  const components = {
+    Comp: (props) => <MDXRuntime scope={props}>{xx}</MDXRuntime>,
+  }
 
   return (
     <MDXProvider components={components}>
