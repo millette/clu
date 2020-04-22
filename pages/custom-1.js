@@ -3,6 +3,7 @@
 import Link from "next/link"
 import MDXRuntime from "@mdx-js/runtime"
 import { MDXProvider } from "@mdx-js/react"
+import PropTypes from "prop-types"
 import "isomorphic-unfetch"
 
 // import Boo from "../docs/comp-1.mdx"
@@ -19,8 +20,11 @@ const CustomPage = ({ MDXContent, xx }) => {
   // console.log("COMP", typeof Comp)
   // console.log(Comp)
   // const components = { Comp: () => <MDXRuntime>{xx}</MXDRuntime> }
+
+  const Comp = (props) => <MDXRuntime scope={props}>{xx}</MDXRuntime>
+
   const components = {
-    Comp: (props) => <MDXRuntime scope={props}>{xx}</MDXRuntime>,
+    Comp,
   }
 
   return (
@@ -63,6 +67,11 @@ CustomPage.getInitialProps = async (o) => {
   }
 
   return { MDXContent: "NADA" }
+}
+
+CustomPage.propTypes = {
+  MDXContent: PropTypes.string.isRequired,
+  xx: PropTypes.string.isRequired,
 }
 
 export default CustomPage
